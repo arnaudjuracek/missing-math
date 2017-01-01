@@ -1,5 +1,5 @@
 <h1 align="center">missing-math</h1>
-<h3 align="center">missing math utils</h3>
+<h3 align="center">missing <code>js</code> math utils</h3>
 <div align="center">
   <!-- License -->
   <a href="https://raw.githubusercontent.com/arnaudjuracek/xy/master/LICENSE">
