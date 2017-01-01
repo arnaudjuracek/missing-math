@@ -25,7 +25,7 @@ var mm = require('missing-math');
 + `mm.degrees(radians)`
 + `mm.radians(degrees)`
 + `mm.random(min, max)`
-+ `mm.constrain(a, min, max)`
++ `mm.clamp(a, min, max)` *or* `mm.constrain(a, min, max)`
 + `mm.lerp(a, b, t)`
 + `mm.norm(a, min, max)`
 + `mm.map(a, in_min, in_max, out_min, out_max)`

@@ -5,7 +5,8 @@ var MissingMath = {
   radians: function(deg) { return deg * Math.PI / 180; },
 
   random: function(min, max) { return Math.random() * (max - min) + min; },
-  constrain: function(a, min, max) { return Math.max(min, Math.min(a, max)); },
+  clamp: function(a, min, max) { return Math.max(min, Math.min(a, max)); },
+  constrain: function(a, min, max) { return this.clamp(a, min, max); },
   lerp: function(a, b, t) { return a + t * (b - a); },
   norm: function(a, min, max) { return this.map(a, min, max, 0, 1); },
   map: function(a, in_min, in_max, out_min, out_max) { return (a - in_min) * (out_max - out_min) / (in_max - in_min) + out_min; },

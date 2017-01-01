@@ -6,6 +6,7 @@ console.log('radians to degrees', mm.degrees(Math.PI));
 console.log('degrees to radians', mm.radians(180));
 
 console.log('random', mm.random(50, 60));
+console.log('clamp', mm.clamp(50, 5, 10));
 console.log('constrain', mm.constrain(50, 5, 10));
 console.log('lerp', mm.lerp(0, 10, 0.5));
 console.log('norm', mm.norm(50, 0, 100));
