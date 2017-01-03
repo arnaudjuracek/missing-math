@@ -28,7 +28,7 @@ var mm = require('missing-math');
 + `mm.lerp(a, b, t)`
 + `mm.norm(a, min, max)`
 + `mm.map(a, in_min, in_max, out_min, out_max)`
-+ `mm.random(min, max)`
++ `mm.random(a, [b])` *or* `mm.rnd(a, [b])`
 + `mm.noise(x, [y, z])` *or* `mm.perlin(x, [y, z])`
 
 ### experimental 
