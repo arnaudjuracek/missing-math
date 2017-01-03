@@ -1,16 +1,27 @@
 'use strict';
 
+var noise = require('perlin').noise;
+
 var MissingMath = {
   degrees: function(rad) { return rad * 180 / Math.PI; },
   radians: function(deg) { return deg * Math.PI / 180; },
 
-  random: function(min, max) { return Math.random() * (max - min) + min; },
   clamp: function(a, min, max) { return Math.max(min, Math.min(a, max)); },
   constrain: function(a, min, max) { return this.clamp(a, min, max); },
   lerp: function(a, b, t) { return a + t * (b - a); },
   norm: function(a, min, max) { return this.map(a, min, max, 0, 1); },
   map: function(a, in_min, in_max, out_min, out_max) { return (a - in_min) * (out_max - out_min) / (in_max - in_min) + out_min; },
 
+  random: function(min, max) { return Math.random() * (max - min) + min; },
+  perlin: function(x, y, z) {
+    if (z) return noise.perlin3(x, y, z);
+    else if (y) return noise.perlin2(x, y);
+    else return noise.perlin2(x, null);
+  },
+  noise: function(x, y, z) { return this.perlin(x, y, z); },
+
+
+  // -------------------------------------------------------------------------
   // EXPERIMENTAL
   lerpColor: function(a, b, amt) {
     var ah = parseInt(a.replace(/#/g, ''), 16),
