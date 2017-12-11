@@ -1,11 +1,7 @@
-<h1 align="center">missing-math</h1>
-<h3 align="center">missing <code>js</code> math utils</h3>
-<div align="center">
-  <!-- License -->
-  <a href="https://raw.githubusercontent.com/arnaudjuracek/xy/master/LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License" />
-  </a>
-</div>
+# missing-math  
+*Missing <code>js</code> math utils*
+
+<br>
 
 ## Installation
 
@@ -13,27 +9,46 @@
 npm install -S arnaudjuracek/missing-math
 ```
 
+<br>
+
 ## Usage
 
+###### global namespace
 ```js
-var mm = require('missing-math');
+const mm = require('missing-math')
+mm.random(0, 100) // => 36.11395762648013
 ```
 
-## API
+###### selective import
+```js
+const { random } = require('missing-math')
+random(0, 100) // => 36.11395762648013
+```
 
-### stable
-+ `mm.degrees(radians)`
-+ `mm.radians(degrees)`
-+ `mm.clamp(a, min, max)` *or* `mm.constrain(a, min, max)`
-+ `mm.lerp(a, b, t)`
-+ `mm.norm(a, min, max)`
-+ `mm.map(a, in_min, in_max, out_min, out_max)`
-+ `mm.random(a, [b])` *or* `mm.rnd(a, [b])`
-+ `mm.noise(x, [y, z])` *or* `mm.perlin(x, [y, z])`
+###### using ES6 `import`
+```js
+import { random } from 'missing-math'
+random(0, 100) // => 36.11395762648013
+```
+<br>
 
-### experimental 
-<sup>(may change in future updates)</sup>
-+ `mm.lerpColor(c1, c2, t)`
+## Methods
++ `clamp(a, min, max)`   
++ `degrees(radians)`
++ `radians(degrees)`
++ `lerp(a, b, t)`
++ `normalize(a, min, max)`   
++ `map(a, in_min, in_max, out_min, out_max)`
++ `random(a, [ b ])`   
++ `perlin(x, [ y, [ z ] ])`   
+
+#### Aliases
++ `clamp` : `constrain`
++ `normalize` : `norm`
++ `random` : `rnd`
++ `perlin` : `noise`
+
+<br>
 
 ## License
 
