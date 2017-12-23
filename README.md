@@ -1,15 +1,17 @@
 # missing-math  
-*Missing <code>js</code> math utils*
 
+[![LICENSE](https://img.shields.io/npm/l/missing-math.svg?style=flat-square)](https://github.com/arnaudjuracek/missing-math/master/LICENSE)
+[![NPM](https://img.shields.io/npm/v/missing-math.svg?style=flat-square&colorB=E4612D)](https://www.npmjs.com/package/missing-math)
+> missing `Math` utils
+
+<br>
 <br>
 
 ## Installation
 
 ```sh
-npm install -S arnaudjuracek/missing-math
+npm install -S missing-math
 ```
-
-<br>
 
 ## Usage
 
@@ -30,7 +32,6 @@ random(0, 100) // => 36.11395762648013
 import { random } from 'missing-math'
 random(0, 100) // => 36.11395762648013
 ```
-<br>
 
 ## Methods
 + `clamp(a, min, max)`   
@@ -47,8 +48,6 @@ random(0, 100) // => 36.11395762648013
 + `normalize` : `norm`
 + `random` : `rnd`
 + `perlin` : `noise`
-
-<br>
 
 ## License
 
