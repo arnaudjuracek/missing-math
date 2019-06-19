@@ -1,3 +1,7 @@
+dist/*
+
+.vscode
+
 ####### NODE ########
 .tmp
 .sass-cache

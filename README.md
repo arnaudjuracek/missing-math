@@ -1,54 +1,45 @@
 # missing-math  
+> missing features of the `Math` built-in object
 
-[![LICENSE](https://img.shields.io/npm/l/missing-math.svg?style=flat-square)](https://github.com/arnaudjuracek/missing-math/master/LICENSE)
-[![NPM](https://img.shields.io/npm/v/missing-math.svg?style=flat-square&colorB=E4612D)](https://www.npmjs.com/package/missing-math)
-> missing `Math` utils
-
-<br>
 <br>
 
 ## Installation
 
-```sh
-npm install -S missing-math
+```console
+$ npm install --save missing-math
 ```
 
 ## Usage
 
-###### global namespace
+##### Import with a module bundler
 ```js
-const mm = require('missing-math')
-mm.random(0, 100) // => 36.11395762648013
+// using ES6 module
+import { clamp, degrees } from 'missing-math'
+
+// using CommonJS module
+var { clamp, degrees } = require('missing-math')
 ```
 
-###### selective import
-```js
-const { random } = require('missing-math')
-random(0, 100) // => 36.11395762648013
-```
+##### Import from a browser
 
-###### using ES6 `import`
-```js
-import { random } from 'missing-math'
-random(0, 100) // => 36.11395762648013
+```html
+<script src="https://unpkg.com/missing-math"></script>
+<script>
+  // all methods are exposed in window.MissingMath
+  MissingMath.clamp()
+  MissingMath.degrees()
+</script>
 ```
 
 ## Methods
-+ `clamp(a, min, max)`   
-+ `degrees(radians)`
-+ `radians(degrees)`
-+ `lerp(a, b, t)`
-+ `normalize(a, min, max)`   
-+ `map(a, in_min, in_max, out_min, out_max)`
-+ `random(a, [ b ])`   
-+ `perlin(x, [ y, [ z ] ])`   
+- `clamp(a, min, max)`   
+- `normalize(a, min, max)`   
+- `map(a, in_min, in_max, out_min, out_max)`
+- `lerp(a, b, t)`
+- `random(a, [ b ])`
+- `degrees(radians)`
+- `radians(degrees)`
 
-#### Aliases
-+ `clamp` : `constrain`
-+ `normalize` : `norm`
-+ `random` : `rnd`
-+ `perlin` : `noise`
 
 ## License
-
 [MIT](https://tldrlegal.com/license/mit-license).

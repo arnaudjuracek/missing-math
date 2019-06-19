@@ -1,14 +1,48 @@
 {
   "name": "missing-math",
-  "version": "2.0.0",
-  "description": "missing math utils",
-  "main": "lib/index.js",
+  "description": "missing features of the Math built-in object",
+  "version": "3.0.0",
+  "amdName": "MissingMath",
+  "source": "src/index.js",
+  "main": "dist/missing-math.js",
+  "module": "dist/missing-math.m.js",
+  "unpkg": "dist/missing-math.umd.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "node test/test.js"
+    "build": "microbundle -f es,cjs && microbundle -f umd --target web",
+    "test": "ava",
+    "lint": "eslint src/**",
+    "preversion": "npm run test && npm run build && git add dist --force",
+    "postversion": "git push && git push --tags && npm publish"
   },
-  "author": "Arnaud Juracek <arnaud.juracek@gmail.com> (http://arnaudjuracek.fr)",
+  "ava": {
+    "require": [
+      "esm"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:arnaudjuracek/missing-math.git"
+  },
+  "author": "Arnaud Juracek <arnaud.juracek@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "perlin": "^1.0.0"
-  }
+  "bugs": {
+    "url": "https://github.com/arnaudjuracek/missing-math/issues"
+  },
+  "homepage": "https://github.com/arnaudjuracek/missing-math#readme",
+  "devDependencies": {
+    "ava": "^2.1.0",
+    "eslint": "^4.18.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "esm": "^3.2.25",
+    "microbundle": "^0.11.0",
+    "tape": "^4.10.2"
+  },
+  "private": false
 }
