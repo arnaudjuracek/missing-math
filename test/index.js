@@ -1,18 +1,30 @@
-#!/usr/bin/env node
+import * as mm from '../src'
+import test from 'ava'
 
-const lib = require('../')
+const tests = {}
 
-console.log('\nRunning missing-math test…\n')
+tests['clamp'] = t => {
+  t.is(mm.clamp(0, 50, 100), 50)
+  t.is(mm.clamp(100, 0, 50), 50)
+}
 
-Object.keys(lib).forEach(k => {
-  let args = []
-  for (let i = 0; i < lib[k].length; i++) {
-    const value = parseInt((Math.random() * 100).toFixed(0))
-    args.push(value)
-  }
+tests['normalize'] = t => {
+  t.is(mm.normalize(0, 0, 100), 0)
+  t.is(mm.normalize(50, 0, 100), 0.5)
+  t.is(mm.normalize(100, 0, 100), 1)
+}
 
-  const result = lib[k].apply(null, args)
-  console.log(`${k}(${args.join(', ')}) = ${result}`)
+tests['map'] = t => {
+  t.is(mm.map(50, 0, 100, -100, 100), 0)
+}
+
+tests['lerp'] = t => {
+  t.is(mm.lerp(0, 100, 0), 0)
+  t.is(mm.lerp(0, 100, 0.5), 50)
+  t.is(mm.lerp(0, 100, 1), 100)
+}
+
+Object.keys(mm).forEach(name => {
+  if (tests.hasOwnProperty(name)) test(name, tests[name])
+  else test.todo(name)
 })
-
-console.log('\nmissing-math test sucessful')

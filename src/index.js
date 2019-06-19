@@ -16,9 +16,13 @@ export function lerp (a, b, t) {
   return a + t * (b - a)
 }
 
-export function random (a, b) {
-  if (b !== undefined) return lerp(a, b, Math.random())
-  return lerp(0, a, Math.random())
+export function random (a, b, rng = Math.random) {
+  if (b !== undefined) return lerp(a, b, rng())
+  return lerp(0, a, rng())
+}
+
+export function randomInt (a, b, rng = Math.random) {
+  return Math.floor(random(a, b, rng))
 }
 
 export function degrees (rad) {

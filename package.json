@@ -12,10 +12,15 @@
   ],
   "scripts": {
     "build": "microbundle -f es,cjs && microbundle -f umd --target web",
-    "test": "npm run build && node test/index.js",
+    "test": "ava",
     "lint": "eslint src/**",
     "preversion": "npm run test && npm run build && git add dist --force",
     "postversion": "git push && git push --tags && npm publish"
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ]
   },
   "repository": {
     "type": "git",
@@ -28,13 +33,16 @@
   },
   "homepage": "https://github.com/arnaudjuracek/missing-math#readme",
   "devDependencies": {
+    "ava": "^2.1.0",
     "eslint": "^4.18.0",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^6.0.0",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
-    "microbundle": "^0.11.0"
+    "esm": "^3.2.25",
+    "microbundle": "^0.11.0",
+    "tape": "^4.10.2"
   },
   "private": false
 }
