@@ -36,6 +36,8 @@ var { clamp, degrees } = require('missing-math')
 - `random(a, [ b ])`
 - `degrees(radians)`
 - `radians(degrees)`
+- `roundTo(value, nearest)`
+- `floorTo(value, nearest)`
 
 
 ## License

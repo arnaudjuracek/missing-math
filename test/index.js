@@ -24,6 +24,14 @@ tests['lerp'] = t => {
   t.is(mm.lerp(0, 100, 1), 100)
 }
 
+tests['roundTo'] = t => {
+  t.is(mm.roundTo(33, 10), 40)
+}
+
+tests['floorTo'] = t => {
+  t.is(mm.floorTo(33, 10), 30)
+}
+
 Object.keys(mm).forEach(name => {
   if (tests.hasOwnProperty(name)) test(name, tests[name])
   else test.todo(name)

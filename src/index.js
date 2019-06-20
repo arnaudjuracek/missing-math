@@ -32,3 +32,11 @@ export function degrees (rad) {
 export function radians (deg) {
   return deg * Math.PI / 180
 }
+
+export function roundTo (value, nearest) {
+  return Math.ceil(value / nearest) * nearest
+}
+
+export function floorTo (value, nearest) {
+  return Math.floor(value / nearest) * nearest
+}
