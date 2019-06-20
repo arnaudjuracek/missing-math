@@ -3,15 +3,12 @@
 
 <br>
 
-## Installation
+## Usage
+##### Import with a module bundler
 
 ```console
 $ npm install --save missing-math
 ```
-
-## Usage
-
-##### Import with a module bundler
 ```js
 // using ES6 module
 import { clamp, degrees } from 'missing-math'
