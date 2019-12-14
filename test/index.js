@@ -12,10 +12,13 @@ tests['normalize'] = t => {
   t.is(mm.normalize(0, 0, 100), 0)
   t.is(mm.normalize(50, 0, 100), 0.5)
   t.is(mm.normalize(100, 0, 100), 1)
+  t.is(mm.normalize(-1, 0, 1, true), 0)
+  t.is(mm.normalize(10, 0, 1, true), 1)
 }
 
 tests['map'] = t => {
   t.is(mm.map(50, 0, 100, -100, 100), 0)
+  t.is(mm.map(500, 0, 100, -100, 100, true), 100)
 }
 
 tests['lerp'] = t => {

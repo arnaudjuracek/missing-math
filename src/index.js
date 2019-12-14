@@ -4,12 +4,13 @@ export function clamp (a, min, max) {
   return Math.max(min, Math.min(a, max))
 }
 
-export function normalize (a, min, max) {
-  return map(a, min, max, 0, 1)
+export function normalize (a, min, max, clamped = false) {
+  return map(a, min, max, 0, 1, clamped)
 }
 
-export function map (a, inMin, inMax, outMin, outMax) {
-  return (a - inMin) * (outMax - outMin) / (inMax - inMin) + outMin
+export function map (a, inMin, inMax, outMin, outMax, clamped = false) {
+  const result = (a - inMin) * (outMax - outMin) / (inMax - inMin) + outMin
+  return clamped ? clamp(result, outMin, outMax) : result
 }
 
 export function lerp (a, b, t) {
