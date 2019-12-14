@@ -32,6 +32,14 @@ tests['floorTo'] = t => {
   t.is(mm.floorTo(33, 10), 30)
 }
 
+tests['fract'] = t => {
+  t.is(mm.fract(3), 0)
+  t.is(mm.fract(3.1415926, 1), 0.1)
+  t.is(mm.fract(3.1415926, 2), 0.14)
+  t.is(mm.fract(3.1415926, 3), 0.142)
+  t.is(mm.fract(3.1415926, 4), 0.1416)
+}
+
 Object.keys(mm).forEach(name => {
   if (tests.hasOwnProperty(name)) test(name, tests[name])
   else test.todo(name)

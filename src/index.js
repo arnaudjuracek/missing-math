@@ -40,3 +40,10 @@ export function roundTo (value, nearest) {
 export function floorTo (value, nearest) {
   return Math.floor(value / nearest) * nearest
 }
+
+export function fract (value, decimals) {
+  const fractionalPart = value - Math.floor(value)
+  return decimals
+    ? +(fractionalPart).toFixed(decimals)
+    : fractionalPart
+}

@@ -1,4 +1,4 @@
-# missing-math  
+# missing-math
 > missing features of the `Math` built-in object
 
 <br>
@@ -29,15 +29,16 @@ var { clamp, degrees } = require('missing-math')
 ```
 
 ## Methods
-- `clamp(a, min, max)`   
-- `normalize(a, min, max)`   
-- `map(a, in_min, in_max, out_min, out_max)`
+- `clamp(value, min, max)`
+- `normalize(value, min, max)`
+- `map(value, in_min, in_max, out_min, out_max)`
 - `lerp(a, b, t)`
-- `random(a, [ b ])`
+- `random(a[, b])`
 - `degrees(radians)`
 - `radians(degrees)`
 - `roundTo(value, nearest)`
 - `floorTo(value, nearest)`
+- `fract(value[, decimals])`
 
 
 ## License
