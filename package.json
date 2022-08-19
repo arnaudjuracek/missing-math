@@ -1,7 +1,7 @@
 {
   "name": "missing-math",
   "description": "missing features of the Math built-in object",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "amdName": "MissingMath",
   "source": "src/index.js",
   "main": "dist/missing-math.js",
