@@ -30,6 +30,7 @@ var { clamp, degrees } = require('missing-math')
 
 ## Methods
 - `clamp(value, min, max)`
+- `wrap(value, min, max)`
 - `normalize(value, min, max[, clamp = false])`
 - `map(value, in_min, in_max, out_min, out_max[, clamp = false])`
 - `lerp(a, b, t)`

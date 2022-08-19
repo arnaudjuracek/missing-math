@@ -4,6 +4,12 @@ export function clamp (a, min, max) {
   return Math.max(min, Math.min(a, max))
 }
 
+export function wrap (a, min, max) {
+  if (a > max) return a % max
+  if (a < min) return wrap(a + max, min, max)
+  return a
+}
+
 export function normalize (a, min, max, clamped = false) {
   return map(a, min, max, 0, 1, clamped)
 }

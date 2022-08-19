@@ -8,6 +8,21 @@ tests['clamp'] = t => {
   t.is(mm.clamp(100, 0, 50), 50)
 }
 
+tests['wrap'] = t => {
+  t.is(mm.wrap(0, 0, 100), 0)
+  t.is(mm.wrap(1, 0, 100), 1)
+  t.is(mm.wrap(100, 0, 100), 100)
+  t.is(mm.wrap(101, 0, 100), 1)
+  t.is(mm.wrap(150, 0, 100), 50)
+  t.is(mm.wrap(1001, 0, 100), 1)
+  t.is(mm.wrap(1050, 0, 100), 50)
+  t.is(mm.wrap(-1, 0, 100), 99)
+  t.is(mm.wrap(-50, 0, 100), 50)
+  t.is(mm.wrap(-150, 0, 100), 50)
+  t.is(mm.wrap(-101, 0, 100), 99)
+  t.is(mm.wrap(-1099, 0, 100), 1)
+}
+
 tests['normalize'] = t => {
   t.is(mm.normalize(0, 0, 100), 0)
   t.is(mm.normalize(50, 0, 100), 0.5)
