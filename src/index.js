@@ -40,8 +40,12 @@ export function radians (deg) {
   return deg * Math.PI / 180
 }
 
-export function roundTo (value, nearest) {
+export function ceilTo (value, nearest) {
   return Math.ceil(value / nearest) * nearest
+}
+
+export function roundTo (value, nearest) {
+  return Math.round(value / nearest) * nearest
 }
 
 export function floorTo (value, nearest) {

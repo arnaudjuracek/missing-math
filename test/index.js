@@ -43,11 +43,16 @@ tests['lerp'] = t => {
 }
 
 tests['roundTo'] = t => {
-  t.is(mm.roundTo(33, 10), 40)
+  t.is(mm.roundTo(33, 10), 30)
+  t.is(mm.roundTo(36, 10), 40)
 }
 
 tests['floorTo'] = t => {
   t.is(mm.floorTo(33, 10), 30)
+}
+
+tests['ceilTo'] = t => {
+  t.is(mm.ceilTo(33, 10), 40)
 }
 
 tests['fract'] = t => {
