@@ -23,6 +23,13 @@ export function lerp (a, b, t) {
   return a + t * (b - a)
 }
 
+export function lerpRadians (a, b, t){
+  const cs = (1 - t) * Math.cos(a) + t * Math.cos(b)
+  const sn = (1 - t) * Math.sin(a) + t * Math.sin(b)
+  return Math.atan2(cs, sn)
+}
+
+
 export function random (a, b, rng = Math.random) {
   if (b !== undefined) return lerp(a, b, rng())
   return lerp(0, a, rng())
