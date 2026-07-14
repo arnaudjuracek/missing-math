@@ -34,7 +34,8 @@ var { clamp, degrees } = require('missing-math')
 - `normalize(value, min, max[, clamp = false])`
 - `map(value, in_min, in_max, out_min, out_max[, clamp = false])`
 - `lerp(a, b, t)`
-- `random(a[, b])`
+- `random([a[, b[, rng = Math.random]]])`
+- `randomInt([a[, b[, rng = Math.random]]])`
 - `degrees(radians)`
 - `radians(degrees)`
 - `roundTo(value, nearest)`

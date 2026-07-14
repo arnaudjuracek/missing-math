@@ -29,7 +29,7 @@ export function lerpRadians (a, b, t){
   return Math.atan2(sn, cs)
 }
 
-export function random (a, b, rng = Math.random) {
+export function random (a = 1, b, rng = Math.random) {
   if (b !== undefined) return lerp(a, b, rng())
   return lerp(0, a, rng())
 }
